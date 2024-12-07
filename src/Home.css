@@ -1,0 +1,24 @@
+/* Home.css */
+.home {
+    background-color: #eaeaea;
+    padding: 20px;
+  }
+  
+  .home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .home-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .home-row {
+    display: flex;
+    justify-content: space-between; /* Adds spacing between products */
+    gap: 20px; /* Adds gap between items */
+    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+  }
+  
