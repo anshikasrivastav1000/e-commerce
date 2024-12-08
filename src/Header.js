@@ -1,11 +1,13 @@
-import react from "react";
+
 import './Header.css';
 
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import SearchIcon from '@mui/icons-material/Search';
 import {Link} from"react-router-dom";
+import { useStateValue } from "./StateProvider";
 export default function Header(){
+    const [{basket},dispatch] = useStateValue();
     return(
         <div className="navbar">
         {/* Logo Section */}
@@ -22,10 +24,15 @@ export default function Header(){
   
         {/* Navigation Section */}
         <div className="navbar_nav">
+        <Link to="/login">
           <div className="nav_item">
+            
+            
             <span className="nav_itemLineOne">Hey Guest</span>
             <span className="nav_itemLineTwo">Sign in</span>
           </div>
+          
+          </Link>
           <div className="nav_item">
             <span className="nav_itemLineOne">Your</span>
             <span className="nav_itemLineTwo">Shop</span>
@@ -33,7 +40,7 @@ export default function Header(){
           <Link to="/checkout" style={{textDecoration:"none"}}>
           <div className="nav_item basket">
             <ShoppingBasketIcon fontSize="large" />
-            <span className="nav_itemLineTwo nav_basketCount">0</span>
+            <span className="nav_itemLineTwo nav_basketCount">{basket.length}</span>
           </div>
           </Link>
         </div>

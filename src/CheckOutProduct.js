@@ -1,17 +1,25 @@
 import "./CheckOutProduct.css";
-
-export default function (){
+import { useStateValue } from "./StateProvider";
+export default function CheckOutProduct({id,image,title,price,rating}){
+  const [{basket},dispatch] = useStateValue();
+  const removeFromBasket =() =>{
+    dispatch({
+      type:"REMOVE_FROM_BASKET",
+      id:id
+    })
+  }
     return(
         <div className="checkout">
-        <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/headphone/b/u/0/-original-imahf4qpc5hhzhma.jpeg?q=70"  className="checkout_image" />
+        <img src={image}  className="checkout_image" />
         <div className="checkProduct-info">
-        <h2 className="checkout_name">dg</h2>
-        <p className="checkout_price">$9</p>
-        <p className="checkout_rating">⭐ </p>
-        <p className="checkout_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, eum!
-
-        </p>
+        <h2 className="checkout_name">{title}</h2>
+        <p className="checkout_price"> price: {price}</p>
+        <p className="checkout_rating">rating:{rating} </p>
         </div>
+        <div className="product_buttons">
+             
+             <button className="product_button remove" onClick={removeFromBasket}>Remove from Cart</button>
+           </div>
         
        
       </div>
