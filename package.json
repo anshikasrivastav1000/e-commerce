@@ -8,9 +8,16 @@
     "@mui/icons-material": "^6.1.10",
     "@mui/material": "^6.1.10",
     "cra-template": "1.2.0",
-    "react": "^19.0.0",
+    
+    
+
+
+"react": "^19.0.0",
+
+
     "react-currency-format": "^1.1.0",
-    "react-dom": "^19.0.0",
+     "react-dom": "^19.0.0",
+   
     "react-router-dom": "^7.0.2",
     "react-scripts": "5.0.1",
     "web-vitals": "^4.2.4"
